@@ -1,0 +1,73 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.25em;
+  margin: 0 1em;
+  margin-bottom: 0.5em;
+}
+
+nav a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+  min-height: 40px;
+  max-height: 40px;
+  color: #ff8a39;
+  border: 1px solid #ff8a39;
+}
+
+nav .success {
+  padding: 0.6em 0.5em;
+  display: flex;
+  flex-grow: 1;
+  background-color: rgba(117, 217, 62, 0.05);
+  border: 1px solid rgba(117, 217, 62, 0.6);
+  color: rgba(117, 217, 62, 1);
+  font-family: 'Poiret One', cursive;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+nav > .ajoutBtn {
+  width: 5% !important;
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: bold;
+  margin-left: 1em;
+  box-sizing: border-box;
+}
+
+nav a:hover {
+  cursor: pointer;
+  background-color: rgba(255, 138, 57, 0.1);
+}
+
+nav a.ajoutBtn:hover {
+  background-color: rgba(117, 217, 62, 0.05);
+  border-color: rgba(117, 217, 62, 1);
+  color: rgba(117, 217, 62, 0.5);
+}
+
+app-pizza-add {
+  margin: 0;
+  width: 45%;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 2em;
+  right: 1em;
+}

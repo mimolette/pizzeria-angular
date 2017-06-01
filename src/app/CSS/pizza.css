@@ -1,0 +1,85 @@
+.pizza-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+.pizza-choice header {
+  background-color: rgba(255, 138, 57, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 138, 57, 0.3);
+}
+
+.pizza-choice header .title {
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 1.25em;
+  padding: 0.25em;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.pizza-choice header .price-blk {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  min-width: 4em;
+  padding-right: 0.25em;
+}
+
+.pizza-choice header .price-blk > .price {
+  font-family: cursive;
+  color: #ff8a39;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.pizza-choice header .price-blk > .euro {
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+.pizza-choice:hover header {
+  background-color: rgba(255, 138, 57, 0.25);
+}
+
+.pizza-choice:hover .ingredient-blk {
+  background-color: rgba(255, 138, 57, 0.15);
+}
+
+.pizza-choice .ingredient-blk {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.pizza-choice .ingredient-blk li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  font-style: italic;
+  list-style: none;
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 1.1em;
+  margin-right: 1em;
+}
+
+.pizza-choice .ingredient-blk li > .icone {
+  height: 0.5em;
+  width: 0.5em;
+  background-color: rgba(255, 138, 57, 0.5);
+  border-radius: 50%;
+  margin-right: 0.25em;
+}

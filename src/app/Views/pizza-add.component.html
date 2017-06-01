@@ -1,0 +1,21 @@
+<h3>Ajouter une nouvelle pizza</h3>
+
+<form id="pizzaForm">
+  <div class="field">
+    <label for="name">Nom</label>
+    <input type="text" name="name" id="name" [(ngModel)]="name">
+  </div>
+
+  <div class="field">
+    <label for="price">Prix (€)</label>
+    <input type="text" name="price" id="price" [(ngModel)]="price">
+  </div>
+
+  <app-ingredients-list (onSelect)="onSelectIngredient($event)"
+                        (onUnselect)="onUnselectIngredient($event)"></app-ingredients-list>
+
+  <div class="btn-blk">
+    <div class="btn" (click)="onCancelAction()">Annuler</div>
+    <button class="btn" (click)="onSubmitAction()">Valider</button>
+  </div>
+</form>

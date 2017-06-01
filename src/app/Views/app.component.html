@@ -1,0 +1,12 @@
+<app-pizza-add *ngIf="showForm === true"
+               (onCancel)="hideForm()"
+               (onInsert)="insertAction($event)"
+               [price]=""
+               [name]=""></app-pizza-add>
+<nav>
+  <div *ngIf="lastAddPizza" class="success">
+    La pizza {{ lastAddPizza.name }} à bien été ajoutée
+  </div>
+  <a (click)="onShowForm()" class="ajoutBtn">+</a>
+</nav>
+<app-pizzas-list></app-pizzas-list>

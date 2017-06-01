@@ -1,0 +1,25 @@
+.ingredient-choice {
+  font-family: 'Poiret One', cursive;
+  color: rgba(255, 138, 57, 0.51);
+  font-size: 1.25em;
+  line-height: 1em;
+  margin: 0.25em;
+  text-align: left;
+  padding-left: 0.3em;
+  border-left: 4px solid rgba(255, 138, 57, 0.1);
+}
+
+.ingredient-choice:hover {
+  cursor: pointer;
+}
+
+.ingredient-choice:not(.selected):hover {
+  background-color: rgba(117, 217, 62, 0.05);
+  border-color: rgba(117, 217, 62, 0.1);
+  color: rgba(117, 217, 62, 0.5);
+}
+
+.ingredient-choice.selected {
+  border-left-color: #75d93e;
+  color: #75d93e;
+}

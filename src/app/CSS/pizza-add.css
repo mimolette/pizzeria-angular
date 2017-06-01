@@ -1,0 +1,98 @@
+#pizzaForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+  padding-top: 1.25em;
+  margin: 0 1.25em;
+}
+
+#pizzaForm .field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#pizzaForm .field:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+#pizzaForm .field.valid > label {
+  border-left-color: rgba(117, 217, 62, 1) !important;
+}
+
+#pizzaForm .field.novalid > label {
+  border-left-color: rgb(236, 60, 34) !important;
+}
+
+#pizzaForm .field > label {
+  background-color: rgba(255, 138, 57, 0.05);
+  border-left: 8px solid rgba(255, 138, 57, 0.75);
+  /*border-top: 1px solid rgba(255, 138, 57, 0.75);*/
+  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 1.25em;
+  padding: 0.25em;
+  font-weight: bold;
+  width: 8em;
+  box-sizing: border-box;
+}
+
+#pizzaForm .field > label:hover {
+  cursor: pointer;
+  background-color: rgba(255, 138, 57, 0.25);
+}
+
+#pizzaForm .field > input {
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+  border-left: none;
+  border-right: none;
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 1.25em;
+  padding: 0.25em;
+  flex-grow: 1;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: none;
+}
+
+#pizzaForm .btn-blk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+#pizzaForm .btn {
+  background-color: rgba(255, 138, 57, 0.05);
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  color: #ff8a39;
+  border: 1px solid #ff8a39;
+}
+
+#pizzaForm .btn:first-child {
+  width: 25%;
+}
+
+#pizzaForm .btn:last-child {
+  width: 70%;
+}
+
+
+#pizzaForm .btn:hover {
+  cursor: pointer;
+  background-color: rgba(117, 217, 62, 0.05);
+  border-color: rgba(117, 217, 62, 1);
+  color: rgba(117, 217, 62, 0.5);
+}

@@ -1,20 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { IngredientsService } from './Service/ingredients.service';
+import { PizzasService } from './Service/pizzas.service';
+
 import { AppComponent } from './app.component';
+import { IngredientsListComponent } from './ingredients-liste.component';
+import { PizzasListComponent } from './pizzas-liste.component';
+import { IngredientComponent } from './ingredient.component';
+import { PizzaComponent } from './pizza.component';
+import { PizzaAddComponent } from './pizza-add.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IngredientsListComponent,
+    PizzasListComponent,
+    IngredientComponent,
+    PizzaComponent,
+    PizzaAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    IngredientsService,
+    PizzasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

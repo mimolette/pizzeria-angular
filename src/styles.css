@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  background: url('assets/pictures/back.jpg') no-repeat fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  width: 45%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+h1 {
+  font-family: 'Barrio', cursive;
+  font-size: 3.8em;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  align-self: stretch;
+  background-color: rgba(255, 138, 57, 0.1);
+}
+
+h1 span {
+  margin: 0;
+  padding: 0;
+}
+
+h1 span.vert {
+  color: #009246;
+}
+
+h1 span.blanc {
+  color: #ffffff;
+}
+
+h1 span.rouge {
+  color: #ce2b37;
+}
+
+h2 {
+  background-color: rgba(255, 138, 57, 0.1);
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  text-align: right;
+  align-self: stretch;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-right: 10px;
+  border-bottom: 2px solid #ff8a39;
+}
+
+h3 {
+  margin: 0 1em;
+  background-color: rgba(255, 138, 57, 0.40);
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-style: italic;
+  padding: 0.25em 0.75em;
+  font-size: 1.25em;
+  align-self: stretch;
+  border-bottom: 1px solid #ff8a39;
+}
+
+app-root .load {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-size: 2.0em;
+  color: #ff8a39;
+  font-family: 'Poiret One', cursive;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+app-pizzas-list {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+app-ingredients-list {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+}
