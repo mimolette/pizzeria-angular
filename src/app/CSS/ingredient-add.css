@@ -1,0 +1,70 @@
+#ingredientForm {
+  margin-top: 0.1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+}
+
+#ingredientForm input {
+  border: none;
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 1.25em;
+  padding: 0.25em;
+  flex-grow: 1;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: none;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: rgba(255, 138, 57, 0.35);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: rgba(255, 138, 57, 0.35);
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: rgba(255, 138, 57, 0.35);
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(255, 138, 57, 0.35);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(255, 138, 57, 0.35);
+}
+
+#ingredientForm .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 138, 57, 0.05);
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+  min-width: 3em;
+  opacity: 0.3;
+}
+
+#ingredientForm .btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#ingredientForm .btn.add {
+  margin-left: 0.25em;
+  background-color: rgba(117, 217, 62, 0.2);
+  border: 1px solid rgba(117, 217, 62, 0.5);
+  color: rgba(117, 217, 62, 1);
+}
+
+#ingredientForm .btn.cancel {
+  background-color: rgba(206, 43, 55, 0.2);
+  border: 1px solid rgba(206, 43, 55, 0.5);
+  color: rgba(206, 43, 55, 1);
+}

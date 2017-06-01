@@ -19,4 +19,11 @@ export class IngredientsService {
         console.error(err);
       });
   }
+
+  addIngredient(ingredient: Ingredient): Promise<Ingredient> {
+    return this.http.post(urlIngredients, ingredient)
+      .map(response => response.json())
+      .toPromise()
+      ;
+  }
 }

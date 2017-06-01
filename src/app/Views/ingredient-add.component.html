@@ -1,0 +1,9 @@
+<form id="ingredientForm">
+  <input type="text"
+         name="ingredientName"
+         id="ingredientName"
+         placeholder="Saisir un nom d'ingrédient..."
+         [(ngModel)]="name">
+  <div class="btn cancel" (click)="onCancelAction()">X</div>
+  <div class="btn add" (click)="onSubmitAction()">V</div>
+</form>

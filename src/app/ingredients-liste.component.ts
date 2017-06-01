@@ -15,8 +15,23 @@ export class IngredientsListComponent implements OnInit {
   selectedIngredients: Ingredient[] = [];
   @Output() onSelect = new EventEmitter<Ingredient>();
   @Output() onUnselect = new EventEmitter<Ingredient>();
+  showForm = false;
 
   constructor(private ingredientsService: IngredientsService) {}
+
+  addNewIngredient(ingredient: Ingredient): void {
+    this.ingredients.push(ingredient);
+    this.ingredients.sort(this.compare.bind(this));
+    this.hideFormAction();
+  }
+
+  showFormAction(): void {
+    this.showForm = true;
+  }
+
+  hideFormAction(): void {
+    this.showForm = false;
+  }
 
   getIngredients(): void {
     this.ingredientsService.getIngredients()
@@ -51,6 +66,14 @@ export class IngredientsListComponent implements OnInit {
     if (index) {
       this.selectedIngredients.splice(index, 1);
       this.onUnselect.emit(ingredient);
+    }
+  }
+
+  compare(ingA: Ingredient, ingb: Ingredient): number {
+    if (ingA.name < ingb.name) {
+      return -1;
+    } else {
+      return 1;
     }
   }
 }

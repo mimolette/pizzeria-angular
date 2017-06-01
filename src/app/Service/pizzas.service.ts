@@ -13,7 +13,6 @@ export class PizzasService {
   constructor(private http: Http) {}
 
   deletePizza(pizza: Pizza): Promise<boolean> {
-    console.log(pizza);
     const url = urlPizzas + '/' + pizza._id;
     return this.http.delete(url)
       .toPromise()

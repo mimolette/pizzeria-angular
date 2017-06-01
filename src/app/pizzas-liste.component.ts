@@ -50,7 +50,7 @@ export class PizzasListComponent implements OnInit {
   removePizza (pizza: Pizza) {
     const index = this.pizzas.indexOf(pizza);
 
-    if (index) {
+    if (index !== -1) {
       this.pizzas.splice(index, 1);
       this.onDeleted.emit(pizza);
     }
@@ -67,7 +67,7 @@ export class PizzasListComponent implements OnInit {
   removeSelectedPizza(pizza: Pizza): void {
     const index = this.selectedPizzas.indexOf(pizza);
 
-    if (index) {
+    if (index === -1) {
       this.selectedPizzas.splice(index, 1);
     }
   }
