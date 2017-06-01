@@ -4,9 +4,9 @@
                [price]=""
                [name]=""></app-pizza-add>
 <nav>
-  <div *ngIf="lastAddPizza" class="success">
-    La pizza {{ lastAddPizza.name }} à bien été ajoutée
+  <div *ngIf="message" class="success">
+    {{ message }}
   </div>
   <a (click)="onShowForm()" class="ajoutBtn">+</a>
 </nav>
-<app-pizzas-list></app-pizzas-list>
+<app-pizzas-list (onDeleted)="deleteAction($event)"></app-pizzas-list>

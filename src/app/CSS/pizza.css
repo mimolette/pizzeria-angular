@@ -1,9 +1,44 @@
 .pizza-choice {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
   align-self: stretch;
+}
+
+.pizza-choice >div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+.pizza-choice .deleteBtn {
+  min-width: 1em;
+  padding: 0;
+  font-family: 'Barrio', cursive;
+  color: rgba(255, 138, 57, 0.21);
+  font-weight: bold;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgba(255, 138, 57, 0.3);
+}
+
+.pizza-choice:hover .deleteBtn {
+  border: 1px solid rgba(255, 138, 57, 0.3);
+  color: rgba(255, 138, 57, 0.4);
+  background-color: rgba(255, 138, 57, 0.1);
+}
+
+.pizza-choice .deleteBtn:hover {
+  cursor: pointer;
+  color: #ce2b37;
+  border-color: #ce2b37;
+  background-color: rgba(206, 43, 55, 0.11);
 }
 
 .pizza-choice header {

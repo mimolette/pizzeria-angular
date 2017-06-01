@@ -1,15 +1,18 @@
 <div class="pizza-choice">
-  <header>
-    <div class="title">{{ pizza.name }}</div>
-    <div class="price-blk">
-      <div class="price">{{ pizza.price | number : '1.2-2' }}</div>
-      <div class="euro">€</div>
-    </div>
-  </header>
-  <ul class="ingredient-blk">
-    <li *ngFor="let ingredient of pizza.ingredients">
-      <div class="icone"></div>
-      {{ ingredient.name }}
-    </li>
-  </ul>
+  <div>
+    <header>
+      <div class="title">{{ pizza.name }}</div>
+      <div class="price-blk">
+        <div class="price">{{ pizza.price | number : '1.2-2' }}</div>
+        <div class="euro">€</div>
+      </div>
+    </header>
+    <ul class="ingredient-blk">
+      <li *ngFor="let ingredient of pizza.ingredients">
+        <div class="icone"></div>
+        {{ ingredient.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="deleteBtn" (click)="onDeleteAction()">X</div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input , Output } from '@angular/core';
 import { Pizza } from './Model/pizza';
+import {PizzasService} from './Service/pizzas.service';
 
 @Component({
   selector: 'app-pizza',
@@ -9,4 +10,17 @@ import { Pizza } from './Model/pizza';
 
 export class PizzaComponent {
   @Input() pizza: Pizza;
+  @Output() onDeleted = new EventEmitter<Pizza>();
+
+  constructor(private pizzaService: PizzasService) {}
+
+  onDeleteAction(): void {
+    this.pizzaService.deletePizza(this.pizza)
+      .then(function () {
+        this.onDeleted.emit(this.pizza);
+      }.bind(this))
+      .catch(function (err) {
+        console.error(err);
+      });
+  }
 }

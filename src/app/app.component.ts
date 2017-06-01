@@ -8,7 +8,8 @@ import {PizzasListComponent} from './pizzas-liste.component';
   styleUrls: ['./CSS/app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  lastAddPizza: Pizza = null;
+  message: String = null;
+  className: String = 'success';
   showForm = false;
   @ViewChild(PizzasListComponent)
   private pizzaListComponent: PizzasListComponent;
@@ -25,8 +26,12 @@ export class AppComponent implements AfterViewInit {
   }
 
   insertAction(pizza: Pizza) {
-    this.lastAddPizza = pizza;
+    this.message = `La pizza ${pizza.name} à bien été ajoutée.`;
     this.pizzaListComponent.addNewPizza(pizza);
     this.showForm = false;
+  }
+
+  deleteAction(pizza: Pizza) {
+    this.message = `La pizza ${pizza.name} à bien été supprimée.`;
   }
 }
