@@ -136,10 +136,19 @@ export class AppComponent implements AfterViewInit {
   }
 
   onUnselectIngredient(ingredient: Ingredient) {
-    const index = this.ingredients.indexOf(ingredient);
+    let ingredientToDelete = null;
+    for (const ingredientSelected of this.ingredients) {
+      if (ingredient._id === ingredientSelected._id) {
+        ingredientToDelete = ingredientSelected;
+      }
+    }
 
-    if (index !== -1) {
-      this.ingredients.splice(index, 1);
+    if (ingredientToDelete) {
+      const index = this.ingredients.indexOf(ingredientToDelete);
+
+      if (index !== -1) {
+        this.ingredients.splice(index, 1);
+      }
     }
   }
 
