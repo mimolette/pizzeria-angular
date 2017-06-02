@@ -6,6 +6,11 @@
   align-self: stretch;
 }
 
+.pizza-choice:hover {
+  cursor: pointer;
+}
+
+
 .pizza-choice >div:first-child {
   display: flex;
   flex-direction: column;

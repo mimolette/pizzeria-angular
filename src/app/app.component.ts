@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ViewChild } from '@angular/core';
 import {Pizza} from './Model/pizza';
 import {PizzasListComponent} from './pizzas-liste.component';
 import {Ingredient} from './Model/ingredient';
+import {QtePizza} from './Model/qtePizza';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,9 @@ export class AppComponent implements AfterViewInit {
   className: String = 'success';
   pizzaToEdit: Pizza = null;
   showForm = false;
+  showBasket = false;
   ingredients: Ingredient[];
+  listeQtePizza: QtePizza[] = [];
   @ViewChild(PizzasListComponent)
   private pizzaListComponent: PizzasListComponent;
 
@@ -21,9 +24,11 @@ export class AppComponent implements AfterViewInit {
   }
 
   onShowForm(): void {
-    this.pizzaToEdit = null;
-    this.ingredients = [];
-    this.showForm = true;
+    if (!this.showBasket) {
+      this.pizzaToEdit = null;
+      this.ingredients = [];
+      this.showForm = true;
+    }
   }
 
   hideForm(): void {
@@ -31,9 +36,23 @@ export class AppComponent implements AfterViewInit {
   }
 
   onEditClickAction(pizza: Pizza) {
-    this.pizzaToEdit = pizza;
-    this.ingredients = pizza.ingredients.slice();
-    this.showForm = true;
+    if (!this.showBasket) {
+      this.pizzaToEdit = pizza;
+      this.ingredients = pizza.ingredients.slice();
+      this.showForm = true;
+    }
+  }
+
+  onSubmitBasket(): void {
+    this.message = `Votre commande à été passée avec success.`;
+    this.className = 'success';
+    this.listeQtePizza = [];
+    this.showBasket = false;
+  }
+
+  onHideBasket(): void {
+    this.listeQtePizza = [];
+    this.showBasket = false;
   }
 
   onErrorMessage(error: String): void {
@@ -56,6 +75,20 @@ export class AppComponent implements AfterViewInit {
   }
 
   deleteAction(pizza: Pizza) {
+    let qtePizza = null;
+    for (const qtePizzaExistant of this.listeQtePizza) {
+      if (qtePizzaExistant._id === pizza._id) {
+        qtePizza = qtePizzaExistant;
+      }
+    }
+
+    if (qtePizza) {
+      const index = this.listeQtePizza.indexOf(qtePizza);
+      this.listeQtePizza.splice(index, 1);
+      if (this.listeQtePizza.length < 1) {
+        this.showBasket = false;
+      }
+    }
     this.message = `La pizza ${pizza.name} à bien été supprimée.`;
     this.className = 'success';
   }
@@ -107,6 +140,58 @@ export class AppComponent implements AfterViewInit {
 
     if (index !== -1) {
       this.ingredients.splice(index, 1);
+    }
+  }
+
+  addQtePizza(pizza: Pizza) {
+    this.showForm = false;
+    this.showBasket = true;
+    let qtePizza = null;
+    for (const qtePizzaExistant of this.listeQtePizza) {
+      if (qtePizzaExistant._id === pizza._id) {
+        qtePizza = qtePizzaExistant;
+      }
+    }
+
+    if (qtePizza) {
+      qtePizza.qte++;
+    } else {
+      qtePizza = {
+        _id: pizza._id,
+        qte: 1,
+        pizza: pizza
+      };
+      this.listeQtePizza.push(qtePizza);
+    }
+
+    console.dir(this.listeQtePizza);
+  }
+
+  moinsQtePizza(pizza: Pizza) {
+    let qtePizza = null;
+    for (const qtePizzaExistant of this.listeQtePizza) {
+      if (qtePizzaExistant._id === pizza._id) {
+        qtePizza = qtePizzaExistant;
+      }
+    }
+
+    if (qtePizza) {
+      qtePizza.qte--;
+      if (qtePizza.qte === 0) {
+        const index = this.listeQtePizza.indexOf(qtePizza);
+        this.listeQtePizza.splice(index, 1);
+        if (this.listeQtePizza.length < 1) {
+          this.showBasket = false;
+        }
+      }
+    }
+  }
+
+  deleteQtePizza(qtePizza: QtePizza) {
+    const index = this.listeQtePizza.indexOf(qtePizza);
+    this.listeQtePizza.splice(index, 1);
+    if (this.listeQtePizza.length < 1) {
+      this.showBasket = false;
     }
   }
 }

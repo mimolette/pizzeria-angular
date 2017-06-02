@@ -15,6 +15,7 @@ export class PizzasListComponent implements OnInit {
   selectedPizzas: Pizza[] = [];
   @Output() onDeleted = new EventEmitter<Pizza>();
   @Output() onEdit = new EventEmitter<Pizza>();
+  @Output() onSelect = new EventEmitter<Pizza>();
 
   constructor(private pizzaService: PizzasService) {}
 
@@ -30,14 +31,8 @@ export class PizzasListComponent implements OnInit {
     this.getPizzas();
   }
 
-  onSelectPizza(component: PizzaComponent) {
-    // if (component.isSelected()) {
-    //   this.addSelectedPizza(component.getPizza());
-    // } else {
-    //   this.removeSelectedPizza(component.getPizza());
-    // }
-    //
-    // console.log(this.selectedPizzas);
+  onSelectAction(pizza: Pizza) {
+    this.onSelect.emit(pizza);
   }
 
   setPizzas (pizzas: Pizza[]) {

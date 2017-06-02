@@ -13,6 +13,8 @@ import { IngredientComponent } from './ingredient.component';
 import { PizzaComponent } from './pizza.component';
 import { PizzaAddComponent } from './pizza-add.component';
 import { IngredientAddComponent } from './ingredient-add.component';
+import { BasketComponent } from './basket.component';
+import { PizzaBasketComponent } from './pizza-basket.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { IngredientAddComponent } from './ingredient-add.component';
     IngredientComponent,
     PizzaComponent,
     PizzaAddComponent,
-    IngredientAddComponent
+    IngredientAddComponent,
+    BasketComponent,
+    PizzaBasketComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,64 @@
+.ligne-pizza-basket {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Poiret One', cursive;
+  color: rgba(255, 138, 57, 0.71);
+  padding: 0.2em 0;
+}
+
+.ligne-pizza-basket .t-name {
+  font-weight: bold;
+  font-size: 1.5em;
+  flex-grow: 1;
+  padding-left: 0.5em;
+  /*background-color: red;*/
+}
+.ligne-pizza-basket .t-qte {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: cursive;
+  min-width: 8em;
+  text-align: center;
+  /*background-color: green;*/
+}
+
+.ligne-pizza-basket .t-qte > span {
+  flex-grow: 1;
+  font-size: 2em;
+  /*background-color: green;*/
+}
+
+.ligne-pizza-basket .t-qte > i {
+  font-size: 2.5em;
+  color: rgba(255, 138, 57, 0.15);
+  /*background-color: green;*/
+}
+
+.ligne-pizza-basket .t-qte > i:first-child:hover {
+  color: rgba(242, 44, 55, 0.8);
+  cursor: pointer;
+  /*background-color: green;*/
+}
+
+.ligne-pizza-basket .t-qte > i:last-child:hover {
+  color: rgba(117, 217, 62, 0.8);
+  cursor: pointer;
+  /*background-color: green;*/
+}
+
+.ligne-pizza-basket .t-action {
+  min-width: 2em;
+  text-align: right;
+  font-size: 2.5em;
+  color: rgba(255, 138, 57, 0.15);
+  /*background-color: yellow;*/
+}
+
+.ligne-pizza-basket .t-action > i:hover {
+  color: rgba(242, 44, 55, 0.8);
+  cursor: pointer;
+}

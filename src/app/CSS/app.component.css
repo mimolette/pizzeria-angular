@@ -83,3 +83,17 @@ app-pizza-add {
   top: 2em;
   right: 1em;
 }
+
+app-basket {
+  margin: 0;
+  width: 45%;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.90);
+  position: fixed;
+  top: 2em;
+  right: 1em;
+}

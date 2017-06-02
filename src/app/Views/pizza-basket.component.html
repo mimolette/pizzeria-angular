@@ -1,0 +1,11 @@
+<div class="ligne-pizza-basket">
+  <div class="t-name">{{ qtePizza.pizza.name }}</div>
+  <div class="t-qte">
+    <i class="fa fa-minus-square" aria-hidden="true" (click)="onMoinsAction()"></i>
+    <span>{{ qtePizza.qte }}</span>
+    <i class="fa fa-plus-square" aria-hidden="true" (click)="onPlusAction()"></i>
+  </div>
+  <div class="t-action">
+    <i class="fa fa-trash" aria-hidden="true" (click)="onDeleteAction()"></i>
+  </div>
+</div>

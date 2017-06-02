@@ -10,6 +10,13 @@
                [title]="getTitle()"
                [ingredients]="getIngredients()"
                [name]="getName()"></app-pizza-add>
+<app-basket *ngIf="showBasket"
+            (onDelete)="deleteQtePizza($event)"
+            (onMoins)="moinsQtePizza($event)"
+            (onPlus)="addQtePizza($event)"
+            (onCancel)="onHideBasket($event)"
+            (onSubmit)="onSubmitBasket($event)"
+            [listQtePizza]="listeQtePizza"></app-basket>
 <nav>
   <div *ngIf="message" class="{{ className }}">
     {{ message }}
@@ -17,4 +24,5 @@
   <a (click)="onShowForm()" class="ajoutBtn">+</a>
 </nav>
 <app-pizzas-list (onDeleted)="deleteAction($event)"
+                 (onSelect)="addQtePizza($event)"
                  (onEdit)="onEditClickAction($event)"></app-pizzas-list>

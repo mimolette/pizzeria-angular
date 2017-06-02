@@ -12,6 +12,7 @@ export class PizzaComponent {
   @Input() pizza: Pizza;
   @Output() onDeleted = new EventEmitter<Pizza>();
   @Output() onEdit = new EventEmitter<Pizza>();
+  @Output() onSelect = new EventEmitter<Pizza>();
 
   constructor(private pizzaService: PizzasService) {}
 
@@ -23,6 +24,10 @@ export class PizzaComponent {
       .catch(function (err) {
         console.error(err);
       });
+  }
+
+  onSelectAction(): void {
+    this.onSelect.emit(this.pizza);
   }
 
   onEditAction(): void {

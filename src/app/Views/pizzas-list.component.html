@@ -3,6 +3,7 @@
 <div class="list-pizza">
   <app-pizza *ngFor="let p of pizzas"
              (onEdit)="onEditClickAction($event)"
+             (onSelect)="onSelectAction($event)"
              (onDeleted)="deletePizzaAction($event)"
              [pizza]="p">
   </app-pizza>

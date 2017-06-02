@@ -1,0 +1,23 @@
+<h3>Votre panier</h3>
+
+<div id="basketBlk">
+
+  <div class="header">
+    <div class="t-name">Pizza</div>
+    <div class="t-qte">Quantité</div>
+    <div class="t-action"></div>
+  </div>
+
+  <div class="list-pizza-basket">
+    <app-pizza-basket *ngFor="let qtePizza of listQtePizza"
+                      (onDelete)="onDeleteAction($event)"
+                      (onMoins)="onMoinsAction($event)"
+                      (onPlus)="onPlusAction($event)"
+                      [qtePizza]="qtePizza"></app-pizza-basket>
+  </div>
+
+  <div class="btn-blk">
+    <div class="btn" (click)="onCancelAction()">Annuler</div>
+    <button class="btn" (click)="onSubmitAction()">Commander</button>
+  </div>
+</div>

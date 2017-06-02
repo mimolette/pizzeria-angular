@@ -1,0 +1,82 @@
+#basketBlk {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+  padding-top: 1.25em;
+  margin: 0 1.25em;
+}
+.list-pizza-basket {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+app-pizza-basket:not(:first-child) {
+  border-top: 1px solid rgba(255, 138, 57, 0.25);
+}
+
+#basketBlk .btn-blk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+#basketBlk .btn {
+  background-color: rgba(255, 138, 57, 0.05);
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  color: #ff8a39;
+  border: 1px solid #ff8a39;
+}
+
+#basketBlk .btn:first-child {
+  width: 25%;
+}
+
+#basketBlk .btn:last-child {
+  width: 70%;
+}
+
+
+#basketBlk .btn:hover {
+  cursor: pointer;
+  background-color: rgba(117, 217, 62, 0.05);
+  border-color: rgba(117, 217, 62, 1);
+  color: rgba(117, 217, 62, 0.5);
+}
+
+#basketBlk .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Poiret One', cursive;
+  color: rgba(255, 138, 57, 0.71);
+  font-style: italic;
+  border-bottom: 1px solid rgba(255, 138, 57, 0.31);
+  padding-bottom: 0.25em;
+}
+
+#basketBlk .header .t-name {
+  flex-grow: 1;
+  padding-left: 0.5em;
+  /*background-color: red;*/
+}
+#basketBlk .header .t-qte {
+  min-width: 8em;
+  text-align: center;
+  /*background-color: green;*/
+}
+#basketBlk .header .t-action {
+  min-width: 5em;
+  /*background-color: yellow;*/
+}
