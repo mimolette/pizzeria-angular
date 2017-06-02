@@ -8,12 +8,32 @@
     <div class="t-action"></div>
   </div>
 
+  <div *ngIf="toMuchPizza()" class="footer">
+    <div class="total">
+      Montant total
+    </div>
+    <div class="price-blk">
+      <div class="t-price">{{ getTotalPrice() | number : '1.2-2' }}</div>
+      <div class="euro">€</div>
+    </div>
+  </div>
+
   <div class="list-pizza-basket">
     <app-pizza-basket *ngFor="let qtePizza of listQtePizza"
                       (onDelete)="onDeleteAction($event)"
                       (onMoins)="onMoinsAction($event)"
                       (onPlus)="onPlusAction($event)"
                       [qtePizza]="qtePizza"></app-pizza-basket>
+  </div>
+
+  <div class="footer">
+    <div class="total">
+      Montant total
+    </div>
+    <div class="price-blk">
+      <div class="t-price">{{ getTotalPrice() | number : '1.2-2' }}</div>
+      <div class="euro">€</div>
+    </div>
   </div>
 
   <div class="btn-blk">

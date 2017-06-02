@@ -87,8 +87,10 @@ export class PizzasListComponent implements OnInit {
   compare(pizzaA: Pizza, pizzab: Pizza): number {
     if (pizzaA.price < pizzab.price) {
       return -1;
-    } else {
+    } else if (pizzaA.price > pizzab.price) {
       return 1;
+    } else {
+      return 0;
     }
   }
 }

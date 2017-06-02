@@ -33,4 +33,17 @@ export class BasketComponent {
   onSubmitAction(): void {
     this.onSubmit.emit(true);
   }
+
+  getTotalPrice(): number {
+    let price = 0;
+    for (const qtePizza of this.listQtePizza) {
+      price += (qtePizza.qte * +qtePizza.pizza.price);
+    }
+
+    return price;
+  }
+
+  toMuchPizza(): boolean {
+    return this.listQtePizza.length >= 10;
+  }
 }

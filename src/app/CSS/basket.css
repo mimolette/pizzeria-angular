@@ -71,6 +71,13 @@ app-pizza-basket:not(:first-child) {
   padding-left: 0.5em;
   /*background-color: red;*/
 }
+
+#basketBlk .header .t-price {
+  flex-grow: 1;
+  padding-right: 5.5em;
+  text-align: right;
+  /*background-color: red;*/
+}
 #basketBlk .header .t-qte {
   min-width: 8em;
   text-align: center;
@@ -79,4 +86,46 @@ app-pizza-basket:not(:first-child) {
 #basketBlk .header .t-action {
   min-width: 5em;
   /*background-color: yellow;*/
+}
+
+#basketBlk .footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+#basketBlk .footer .price-blk {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  padding-right: 0.5em;
+  min-width: 13em;
+  border: 1px solid rgba(255, 138, 57, 0.15);
+}
+
+#basketBlk .total {
+  font-family: 'Poiret One', cursive;
+  font-style: italic;
+  padding-right: 0.5em;
+  color: rgba(255, 138, 57, 1);
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(255, 138, 57, 0.15);
+  border: 1px solid rgba(255, 138, 57, 0.15);
+}
+
+#basketBlk .footer .price-blk .t-price {
+  font-family: cursive;
+  color: #ff8a39;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#basketBlk .footer .price-blk .euro {
+  font-family: 'Poiret One', cursive;
+  color: #ff8a39;
+  font-size: 0.9em;
+  margin-left: 0.5em;
 }
