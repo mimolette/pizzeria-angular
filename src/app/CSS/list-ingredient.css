@@ -15,11 +15,10 @@ h4 {
   justify-content: flex-start;
   align-items: center;
   background-color: rgba(255, 138, 57, 0.05);
-  border-left: 8px solid rgba(255, 138, 57, 0.75);
-  /*border-top: 1px solid rgba(255, 138, 57, 0.75);*/
-  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+  border-left: 8px solid;
+  /*border-top: 1px solid;*/
+  border-bottom: 1px solid;
   font-family: 'Poiret One', cursive;
-  color: #ff8a39;
   font-size: 1.25em;
   padding: 0.25em;
   font-weight: bold;
@@ -47,4 +46,14 @@ h4 > .addBtn {
 h4 > .addBtn:hover {
   cursor: pointer;
   color: rgba(117, 217, 62, 0.5);
+}
+
+h4 {
+  border-color: rgba(255, 138, 57, 0.75);
+  color: #ff8a39;
+}
+
+h4.error {
+  border-color: rgba(242, 44, 55, 0.75);
+  color: #f22c37;
 }

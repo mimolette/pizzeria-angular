@@ -11,6 +11,7 @@ import {PizzasService} from './Service/pizzas.service';
 export class PizzaComponent {
   @Input() pizza: Pizza;
   @Output() onDeleted = new EventEmitter<Pizza>();
+  @Output() onEdit = new EventEmitter<Pizza>();
 
   constructor(private pizzaService: PizzasService) {}
 
@@ -22,5 +23,9 @@ export class PizzaComponent {
       .catch(function (err) {
         console.error(err);
       });
+  }
+
+  onEditAction(): void {
+    this.onEdit.emit(this.pizza);
   }
 }

@@ -1,17 +1,20 @@
-<h3>Ajouter une nouvelle pizza</h3>
+<h3>{{ title }}</h3>
 
 <form id="pizzaForm">
-  <div class="field">
+  <div class="field" [class.error]="!nameValid">
     <label for="name">Nom</label>
     <input type="text" name="name" id="name" [(ngModel)]="name">
   </div>
 
-  <div class="field">
+  <div class="field" [class.error]="!priceValid">
     <label for="price">Prix (€)</label>
     <input type="text" name="price" id="price" [(ngModel)]="price">
   </div>
 
-  <app-ingredients-list (onSelect)="onSelectIngredient($event)"
+  <app-ingredients-list [ingredientsValid]="ingredientsValid"
+                        [selectedIngredients]="ingredients.slice()"
+                        (onSelect)="onSelectIngredient($event)"
+                        (onError)="onErrorMessage($event)"
                         (onUnselect)="onUnselectIngredient($event)"></app-ingredients-list>
 
   <div class="btn-blk">

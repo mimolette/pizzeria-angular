@@ -36,4 +36,11 @@ export class PizzasService {
       .toPromise()
       ;
   }
+
+  editPizza(pizza: Pizza): Promise<Pizza> {
+    return this.http.put(urlPizzas, pizza)
+      .map(response => response.json())
+      .toPromise()
+      ;
+  }
 }

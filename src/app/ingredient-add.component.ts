@@ -12,6 +12,7 @@ export class IngredientAddComponent {
   @Input() name: String;
   @Output() onCancel = new EventEmitter<boolean>();
   @Output() onInsert = new EventEmitter<Ingredient>();
+  @Output() onError = new EventEmitter<String>();
 
   constructor(private ingredientService: IngredientsService) {}
 
@@ -27,7 +28,7 @@ export class IngredientAddComponent {
           this.onInsert.emit(data);
         }.bind(this))
         .catch(function (err) {
-        console.error(err);
+          this.onError.emit(err.json().error);
       }.bind(this));
     }
   }

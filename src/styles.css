@@ -7,6 +7,12 @@ html {
   flex-direction: column;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0a0603 inset !important;
+  -webkit-text-fill-color: #ff8a39 !important;
+}
+
+
 body {
   margin: 0;
   width: 45%;
@@ -15,7 +21,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.90);
 }
 
 h1 {

@@ -1,12 +1,20 @@
 <app-pizza-add *ngIf="showForm === true"
                (onCancel)="hideForm()"
+               (onError)="onErrorMessage($event)"
+               (onEdit)="editAction($event)"
                (onInsert)="insertAction($event)"
-               [price]=""
-               [name]=""></app-pizza-add>
+               (onSelect)="onSelectIngredient($event)"
+               [_id]="getId()"
+               [action]="getAction()"
+               [price]="getPrice()"
+               [title]="getTitle()"
+               [ingredients]="getIngredients()"
+               [name]="getName()"></app-pizza-add>
 <nav>
-  <div *ngIf="message" class="success">
+  <div *ngIf="message" class="{{ className }}">
     {{ message }}
   </div>
   <a (click)="onShowForm()" class="ajoutBtn">+</a>
 </nav>
-<app-pizzas-list (onDeleted)="deleteAction($event)"></app-pizzas-list>
+<app-pizzas-list (onDeleted)="deleteAction($event)"
+                 (onEdit)="onEditClickAction($event)"></app-pizzas-list>

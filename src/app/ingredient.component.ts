@@ -10,7 +10,7 @@ import {Ingredient} from './Model/ingredient';
 export class IngredientComponent {
   @Input() ingredient: Ingredient;
   @Output() onSelected = new EventEmitter<IngredientComponent>();
-  selected = false;
+  @Input() selected = false;
 
   onClick(): void {
     this.selected = !this.selected;

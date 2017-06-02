@@ -29,17 +29,17 @@
 
 #pizzaForm .field > label {
   background-color: rgba(255, 138, 57, 0.05);
-  border-left: 8px solid rgba(255, 138, 57, 0.75);
-  /*border-top: 1px solid rgba(255, 138, 57, 0.75);*/
-  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+  border-left: 8px solid;
+  /*border-top: 1px solid;*/
+  border-bottom: 1px solid;
   font-family: 'Poiret One', cursive;
-  color: #ff8a39;
   font-size: 1.25em;
   padding: 0.25em;
   font-weight: bold;
   width: 8em;
   box-sizing: border-box;
 }
+
 
 #pizzaForm .field > label:hover {
   cursor: pointer;
@@ -48,11 +48,10 @@
 
 #pizzaForm .field > input {
   border-top: none;
-  border-bottom: 1px solid rgba(255, 138, 57, 0.75);
+  border-bottom: 1px solid;
   border-left: none;
   border-right: none;
   font-family: 'Poiret One', cursive;
-  color: #ff8a39;
   font-size: 1.25em;
   padding: 0.25em;
   flex-grow: 1;
@@ -95,4 +94,14 @@
   background-color: rgba(117, 217, 62, 0.05);
   border-color: rgba(117, 217, 62, 1);
   color: rgba(117, 217, 62, 0.5);
+}
+
+#pizzaForm .field > label, #pizzaForm .field > input {
+  border-color: rgba(255, 138, 57, 0.76);
+  color: #ff8a39;
+}
+
+#pizzaForm .field.error > label, #pizzaForm .field.error > input {
+  border-color: rgba(242, 44, 55, 0.75);
+  color: #f22c37;
 }

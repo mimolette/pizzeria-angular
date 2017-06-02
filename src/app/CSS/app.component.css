@@ -38,6 +38,18 @@ nav .success {
   box-sizing: border-box;
 }
 
+nav .error {
+  padding: 0.6em 0.5em;
+  display: flex;
+  flex-grow: 1;
+  background-color: rgba(242, 44, 55, 0.05);
+  border: 1px solid rgba(242, 44, 55, 0.6);
+  color: #f22c37;
+  font-family: 'Poiret One', cursive;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
 nav > .ajoutBtn {
   width: 5% !important;
   font-size: 3em;
@@ -66,7 +78,7 @@ app-pizza-add {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.90);
   position: absolute;
   top: 2em;
   right: 1em;

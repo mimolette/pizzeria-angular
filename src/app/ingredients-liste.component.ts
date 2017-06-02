@@ -12,16 +12,19 @@ import {IngredientComponent} from './ingredient.component';
 
 export class IngredientsListComponent implements OnInit {
   ingredients: Ingredient[];
-  selectedIngredients: Ingredient[] = [];
+  @Input() selectedIngredients: Ingredient[];
   @Output() onSelect = new EventEmitter<Ingredient>();
   @Output() onUnselect = new EventEmitter<Ingredient>();
+  @Output() onError = new EventEmitter<String>();
   showForm = false;
+  @Input() ingredientsValid = true;
 
   constructor(private ingredientsService: IngredientsService) {}
 
   addNewIngredient(ingredient: Ingredient): void {
     this.ingredients.push(ingredient);
     this.ingredients.sort(this.compare.bind(this));
+    this.onSelect.emit(ingredient);
     this.hideFormAction();
   }
 
@@ -43,30 +46,26 @@ export class IngredientsListComponent implements OnInit {
     this.getIngredients();
   }
 
-  onSelectIngredient(component: IngredientComponent) {
-    if (component.isSelected()) {
-      this.addSelectedIngredient(component.getIngredient());
-    } else {
-      this.removeSelectedIngredient(component.getIngredient());
+  isIngredientSelected(ingredient: Ingredient): boolean {
+    for (const ingredientSelected of this.selectedIngredients) {
+      if (ingredient._id === ingredientSelected._id) {
+        return true;
+      }
     }
+
+    return false;
+  }
+
+  onSelectIngredient(component: IngredientComponent) {
+    this.onSelect.emit(component.getIngredient());
+  }
+
+  onErrorMessage(error: String): void {
+    this.onError.emit(error);
   }
 
   setIngredients (ingredients: Ingredient[]) {
     this.ingredients = ingredients;
-  }
-
-  addSelectedIngredient(ingredient: Ingredient): void {
-    this.selectedIngredients.push(ingredient);
-    this.onSelect.emit(ingredient);
-  }
-
-  removeSelectedIngredient(ingredient: Ingredient): void {
-    const index = this.selectedIngredients.indexOf(ingredient);
-
-    if (index) {
-      this.selectedIngredients.splice(index, 1);
-      this.onUnselect.emit(ingredient);
-    }
   }
 
   compare(ingA: Ingredient, ingb: Ingredient): number {

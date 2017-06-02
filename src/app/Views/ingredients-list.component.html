@@ -1,14 +1,16 @@
-<h4>
+<h4 [class.error]="!ingredientsValid">
   <span>Choix des ingrédients</span>
-  <div class="addBtn" (click)="showFormAction()">ajouter</div>
+  <label for="ingredientName" class="addBtn" (click)="showFormAction()">ajouter</label>
 </h4>
 <app-ingredient-add *ngIf="showForm"
                     (onInsert)="addNewIngredient($event)"
+                    (onError)="onErrorMessage($event)"
                     (onCancel)="hideFormAction($event)"></app-ingredient-add>
 
 <div class="list-ingredient">
   <app-ingredient *ngFor="let ingredient of ingredients"
                   [ingredient]="ingredient"
+                  [selected]="isIngredientSelected(ingredient)"
                   (onSelected)="onSelectIngredient($event)">
   </app-ingredient>
 </div>
