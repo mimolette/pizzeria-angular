@@ -117,7 +117,7 @@ app-pizza-basket:not(:first-child) {
 }
 
 #basketBlk .footer .price-blk .t-price {
-  font-family: cursive;
+  font-family: 'VT323', monospace;
   color: #ff8a39;
   font-size: 1.8em;
   font-weight: bold;

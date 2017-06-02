@@ -42,7 +42,6 @@
 }
 
 .pizza-choice:hover .deleteBtn, .pizza-choice:hover .editBtn {
-  border: 1px solid rgba(255, 138, 57, 0.3);
   color: rgba(255, 138, 57, 0.4);
   background-color: rgba(255, 138, 57, 0.1);
 }
@@ -87,7 +86,7 @@
 }
 
 .pizza-choice header .price-blk > .price {
-  font-family: cursive;
+  font-family: 'VT323', monospace;
   color: #ff8a39;
   font-size: 1.8em;
   font-weight: bold;
